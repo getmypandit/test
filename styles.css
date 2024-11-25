@@ -1,0 +1,81 @@
+/* Basic styling for the body and center content */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 50px;
+}
+
+/* Zodiac Circle container */
+#zodiac-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid white;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 10s infinite linear;
+}
+
+.zodiac-sign {
+  position: absolute;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Positioning the zodiac signs in a circular fashion */
+.zodiac-sign:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+.zodiac-sign:nth-child(2) { top: 30%; left: 5%; }
+.zodiac-sign:nth-child(3) { top: 50%; left: 30%; }
+.zodiac-sign:nth-child(4) { top: 70%; left: 5%; }
+.zodiac-sign:nth-child(5) { top: 90%; left: 50%; transform: translateX(-50%); }
+.zodiac-sign:nth-child(6) { top: 70%; left: 95%; }
+.zodiac-sign:nth-child(7) { top: 50%; left: 70%; }
+.zodiac-sign:nth-child(8) { top: 30%; left: 95%; }
+.zodiac-sign:nth-child(9) { top: 10px; left: 50%; transform: translateX(-50%); }
+.zodiac-sign:nth-child(10) { top: 50%; left: 10%; }
+.zodiac-sign:nth-child(11) { top: 30%; left: 70%; }
+.zodiac-sign:nth-child(12) { top: 50%; left: 10%; }
+
+/* Animation for rotating zodiac circle */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button styling */
+button {
+  padding: 15px 30px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+button:hover {
+  background-color: #ff6600;
+}
