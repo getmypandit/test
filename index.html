@@ -34,34 +34,47 @@
       >
         <form
           id="consultationForm"
+          action="https://formsubmit.co/getmypandit@gmail.com"
+          method="POST"
           class="space-y-4"
         >
+          <!-- Name -->
+          <label class="block font-semibold">Your Full Name</label>
           <input
             type="text"
             name="name"
-            placeholder="Your Full Name"
             class="w-full px-4 py-2 border border-gray-300 rounded-md"
             required
           />
+
+          <!-- Date of Birth -->
+          <label class="block font-semibold">Date of Birth</label>
           <input
             type="date"
             name="dob"
-            placeholder="Date of Birth"
             class="w-full px-4 py-2 border border-gray-300 rounded-md"
             required
           />
+
+          <!-- Birth Time -->
+          <label class="block font-semibold">Birth Time</label>
           <input
             type="time"
             name="time"
-            placeholder="Birth Time"
             class="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
+
+          <!-- Birth City -->
+          <label class="block font-semibold">Birth City</label>
           <input
             type="text"
             name="birthCity"
-            placeholder="Birth City"
+            placeholder="Enter your birth city"
             class="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
+
+          <!-- Language -->
+          <label class="block font-semibold">Preferred Language</label>
           <select
             name="language"
             class="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -69,21 +82,27 @@
             <option value="english">English</option>
             <option value="hindi">Hindi</option>
           </select>
+
+          <!-- Phone Number -->
+          <label class="block font-semibold">Your Phone Number</label>
           <input
             type="tel"
             name="phone"
-            placeholder="Your Phone Number"
+            placeholder="+91 Your Phone Number"
             class="w-full px-4 py-2 border border-gray-300 rounded-md"
             required
           />
+
+          <!-- Submit Button -->
           <button
             type="submit"
             id="submitButton"
-            class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
+            class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-all duration-300"
           >
             Book Consultation Now!
           </button>
         </form>
+
         <!-- Success Message -->
         <div
           id="successMessage"
@@ -136,19 +155,19 @@
       let isSubmitted = false; // Prevent multiple submissions
 
       form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission behavior
+        event.preventDefault(); // Prevent default form behavior
 
         if (isSubmitted) {
           alert("You have already submitted the form!");
           return;
         }
 
-        // Set the button to "Submitting..."
+        // Set button state to "Submitting..."
         submitButton.textContent = "Submitting...";
         submitButton.disabled = true;
 
-        // Simulate form submission
-        fetch("https://formsubmit.co/getmypandit@gmail.com", {
+        // Submit form using fetch
+        fetch(form.action, {
           method: "POST",
           body: new FormData(form),
         })
@@ -159,7 +178,7 @@
               submitButton.classList.add("bg-green-600");
               submitButton.classList.remove("bg-indigo-600");
               successMessage.classList.remove("hidden"); // Show success message
-              form.reset(); // Reset the form
+              form.reset(); // Reset form fields
             } else {
               alert("Error: Unable to submit the form. Please try again.");
               submitButton.textContent = "Book Consultation Now!";
