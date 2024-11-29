@@ -6,192 +6,204 @@
     <title>Astrology by Astrologer Gangadhar</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body
-    class="bg-gradient-to-b from-indigo-200 via-purple-200 to-pink-100 text-gray-800"
-  >
+  <body class="bg-gradient-to-b from-yellow-100 to-indigo-100 text-gray-800">
     <!-- Header Section -->
     <header class="sticky top-0 bg-white shadow-md z-50">
-      <div
-        class="max-w-7xl mx-auto flex items-center justify-center px-4 py-2"
-      >
-        <h1 class="text-lg font-bold">Astrologer Gangadhar</h1>
+      <div class="max-w-7xl mx-auto flex items-center justify-center px-4 py-3">
+        <h1 class="text-lg font-bold text-indigo-700">Astrologer Gangadhar</h1>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section
       id="hero"
-      class="flex flex-col items-center text-center py-12 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
+      class="flex flex-col items-center text-center py-12 px-4 bg-gradient-to-r from-yellow-100 to-indigo-100"
     >
-      <h2 class="text-2xl md:text-4xl font-bold mb-4">
-        Discover Your Path with Astrologer Gangadhar
+      <h2 class="text-2xl md:text-4xl font-bold mb-4 text-indigo-700">
+        Discover What the Stars Hold for You with
+        <span class="text-yellow-500">Pandit Gangadhar!</span>
       </h2>
-      <p class="mb-6 text-lg">
-        Expert astrology consultations to guide your journey.
+      <p class="mb-6 text-lg text-indigo-800">
+        Expert astrology consultation to guide your journey through the
+        celestial wisdom. @99rs
+      </p>
+      <p class="mb-6 text-lg font-semibold text-indigo-800">
+        🎉 Fill Out the Form Below and Claim Your FREE Digital Kundli with Your
+        Consultation! 🎉
       </p>
       <div
-        class="bg-white text-gray-800 p-6 rounded-md shadow-md w-full max-w-md"
+        class="bg-indigo-600 text-white p-6 rounded-md shadow-lg w-full max-w-md"
       >
         <form
-          id="consultationForm"
           action="https://formsubmit.co/getmypandit@gmail.com"
           method="POST"
           class="space-y-4"
         >
           <!-- Name -->
-          <label class="block font-semibold">Your Full Name</label>
+          <label
+            for="name"
+            class="block text-sm font-semibold text-yellow-200 text-left"
+          >
+            Full Name
+          </label>
           <input
+            id="name"
             type="text"
             name="name"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            placeholder="Your Full Name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-800"
             required
           />
 
           <!-- Date of Birth -->
-          <label class="block font-semibold">Date of Birth</label>
+          <label
+            for="dob"
+            class="block text-sm font-semibold text-yellow-200 text-left"
+          >
+            Date of Birth
+          </label>
           <input
+            id="dob"
             type="date"
             name="dob"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-800"
             required
           />
 
           <!-- Birth Time -->
-          <label class="block font-semibold">Birth Time</label>
+          <label
+            for="time"
+            class="block text-sm font-semibold text-yellow-200 text-left"
+          >
+            Birth Time
+          </label>
           <input
+            id="time"
             type="time"
             name="time"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-800"
           />
 
           <!-- Birth City -->
-          <label class="block font-semibold">Birth City</label>
+          <label
+            for="birthCity"
+            class="block text-sm font-semibold text-yellow-200 text-left"
+          >
+            Birth City
+          </label>
           <input
+            id="birthCity"
             type="text"
             name="birthCity"
             placeholder="Enter your birth city"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-800"
           />
 
           <!-- Language -->
-          <label class="block font-semibold">Preferred Language</label>
+          <label
+            for="language"
+            class="block text-sm font-semibold text-yellow-200 text-left"
+          >
+            Preferred Language
+          </label>
           <select
+            id="language"
             name="language"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-800"
           >
             <option value="english">English</option>
             <option value="hindi">Hindi</option>
           </select>
 
           <!-- Phone Number -->
-          <label class="block font-semibold">Your Phone Number</label>
+          <label
+            for="phone"
+            class="block text-sm font-semibold text-yellow-200 text-left"
+          >
+            Phone Number
+          </label>
           <input
+            id="phone"
             type="tel"
             name="phone"
             placeholder="+91 Your Phone Number"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md"
+            class="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-800"
             required
           />
 
           <!-- Submit Button -->
           <button
             type="submit"
-            id="submitButton"
-            class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-all duration-300"
+            class="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600 transition-all duration-300"
           >
             Book Consultation Now!
           </button>
         </form>
-
-        <!-- Success Message -->
-        <div
-          id="successMessage"
-          class="hidden text-green-600 font-bold mt-4 text-center"
-        >
-          🎉 Form submitted! You will receive a text on WhatsApp. 🎉
-        </div>
       </div>
-      <p id="offer" class="mt-4 font-semibold">
+      <p id="offer" class="mt-4 font-semibold text-indigo-800">
         🎉 First 100 Users Get a Free Digital Kundli! 🎉
       </p>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!-- Why Choose Our Services Section -->
     <section id="why-us" class="py-12 px-6 bg-white">
-      <h3 class="text-center text-2xl font-bold mb-8">
+      <h3 class="text-center text-2xl font-bold mb-8 text-indigo-700">
         Why Choose Our Services?
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div>
-          <h4 class="font-bold text-xl">Expert Consultation</h4>
-          <p>Personalized guidance from years of Vedic astrology experience.</p>
+        <div class="bg-indigo-50 p-4 rounded-md shadow-md">
+          <h4 class="font-bold text-xl text-indigo-700">Expert Consultation</h4>
+          <p class="text-gray-600">
+            Get personalized guidance from Pandit Gangadhar with years of
+            experience in Vedic astrology @99 only.
+          </p>
         </div>
-        <div>
-          <h4 class="font-bold text-xl">24/7 Availability</h4>
-          <p>Book consultations anytime to suit your schedule.</p>
+        <div class="bg-indigo-50 p-4 rounded-md shadow-md">
+          <h4 class="font-bold text-xl text-indigo-700">Free 1yr Prediction</h4>
+          <p class="text-gray-600">
+            Get an exclusive 1-Year Personalized Astrology Prediction Report
+            when you book a consultation with Astrologer Gangadhar today!
+          </p>
         </div>
-        <div>
-          <h4 class="font-bold text-xl">Detailed Reports</h4>
-          <p>Comprehensive astrological insights for your life’s journey.</p>
+        <div class="bg-indigo-50 p-4 rounded-md shadow-md">
+          <h4 class="font-bold text-xl text-indigo-700">Detailed Reports</h4>
+          <p class="text-gray-600">
+            Receive comprehensive astrological reports with actionable insights
+            for your life journey.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-6">
+    <footer class="bg-indigo-900 text-white py-6">
       <div
         class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4 space-y-4 md:space-y-0"
       >
-        <p>&copy; 2024 Astrologer Gangadhar. All rights reserved.</p>
+        <div>
+          <h4 class="font-bold text-lg">Astrology - Get My Pandit</h4>
+          <p class="text-sm">
+            Expert astrology consultation services by Pandit Gangadhar.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="hover:text-yellow-500"
+                >Contact us : +9108970525718</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500"
+                >Email us on : getmypandit@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        
+        </div>
       </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-      const form = document.getElementById("consultationForm");
-      const submitButton = document.getElementById("submitButton");
-      const successMessage = document.getElementById("successMessage");
-
-      let isSubmitted = false; // Prevent multiple submissions
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form behavior
-
-        if (isSubmitted) {
-          alert("You have already submitted the form!");
-          return;
-        }
-
-        // Set button state to "Submitting..."
-        submitButton.textContent = "Submitting...";
-        submitButton.disabled = true;
-
-        // Submit form using fetch
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-        })
-          .then((response) => {
-            if (response.ok) {
-              isSubmitted = true; // Mark as submitted
-              submitButton.textContent = "Submitted!";
-              submitButton.classList.add("bg-green-600");
-              submitButton.classList.remove("bg-indigo-600");
-              successMessage.classList.remove("hidden"); // Show success message
-              form.reset(); // Reset form fields
-            } else {
-              alert("Error: Unable to submit the form. Please try again.");
-              submitButton.textContent = "Book Consultation Now!";
-              submitButton.disabled = false;
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert("Error: Unable to submit the form. Please try again.");
-            submitButton.textContent = "Book Consultation Now!";
-            submitButton.disabled = false;
-          });
-      });
-    </script>
   </body>
 </html>
