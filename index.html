@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astrology by Pandit Gangadhar</title>
+    <title>Astrology by Astrologer Gangadhar</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
@@ -12,19 +12,9 @@
     <!-- Header Section -->
     <header class="sticky top-0 bg-white shadow-md z-50">
       <div
-        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2"
+        class="max-w-7xl mx-auto flex items-center justify-center px-4 py-2"
       >
-        <div class="flex items-center">
-          <img src="logo.png" alt="Get My Pandit Logo" class="h-10" />
-          <h1 class="ml-2 text-lg font-bold">Pandit Gangadhar</h1>
-        </div>
-        <nav class="space-x-4 text-sm">
-          <a href="#consult" class="hover:text-indigo-600"
-            >Consult Astrologer</a
-          >
-          <a href="#offer" class="hover:text-indigo-600">Get Digital Kundli</a>
-          <a href="#report" class="hover:text-indigo-600">Astro Report</a>
-        </nav>
+        <h1 class="text-lg font-bold">Astrologer Gangadhar</h1>
       </div>
     </header>
 
@@ -34,7 +24,7 @@
       class="flex flex-col items-center text-center py-12 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
     >
       <h2 class="text-2xl md:text-4xl font-bold mb-4">
-        Discover Your Path with Pandit Gangadhar
+        Discover Your Path with Astrologer Gangadhar
       </h2>
       <p class="mb-6 text-lg">
         Expert astrology consultations to guide your journey.
@@ -88,6 +78,7 @@
           />
           <button
             type="submit"
+            id="submitButton"
             class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700"
           >
             Book Consultation Now!
@@ -132,33 +123,29 @@
       <div
         class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4 space-y-4 md:space-y-0"
       >
-        <p>&copy; 2024 Get My Pandit. All rights reserved.</p>
-        <div class="space-x-4">
-          <a href="#" class="hover:text-indigo-400">Privacy Policy</a>
-          <a href="#" class="hover:text-indigo-400">Terms of Service</a>
-          <a href="#" class="hover:text-indigo-400">Contact Us</a>
-        </div>
-        <div class="flex space-x-4">
-          <a href="#"
-            ><img src="facebook-icon.png" alt="Facebook" class="h-6"
-          /></a>
-          <a href="#"
-            ><img src="twitter-icon.png" alt="Twitter" class="h-6"
-          /></a>
-          <a href="#"
-            ><img src="instagram-icon.png" alt="Instagram" class="h-6"
-          /></a>
-        </div>
+        <p>&copy; 2024 Astrologer Gangadhar. All rights reserved.</p>
       </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
       const form = document.getElementById("consultationForm");
+      const submitButton = document.getElementById("submitButton");
       const successMessage = document.getElementById("successMessage");
+
+      let isSubmitted = false; // Prevent multiple submissions
 
       form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent the default form submission behavior
+
+        if (isSubmitted) {
+          alert("You have already submitted the form!");
+          return;
+        }
+
+        // Set the button to "Submitting..."
+        submitButton.textContent = "Submitting...";
+        submitButton.disabled = true;
 
         // Simulate form submission
         fetch("https://formsubmit.co/getmypandit@gmail.com", {
@@ -167,15 +154,23 @@
         })
           .then((response) => {
             if (response.ok) {
+              isSubmitted = true; // Mark as submitted
+              submitButton.textContent = "Submitted!";
+              submitButton.classList.add("bg-green-600");
+              submitButton.classList.remove("bg-indigo-600");
               successMessage.classList.remove("hidden"); // Show success message
               form.reset(); // Reset the form
             } else {
               alert("Error: Unable to submit the form. Please try again.");
+              submitButton.textContent = "Book Consultation Now!";
+              submitButton.disabled = false;
             }
           })
           .catch((error) => {
             console.error("Error:", error);
             alert("Error: Unable to submit the form. Please try again.");
+            submitButton.textContent = "Book Consultation Now!";
+            submitButton.disabled = false;
           });
       });
     </script>
